@@ -1,0 +1,128 @@
+@import 'config.less';
+.home-item {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    height: 88px;
+    img {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: auto;
+        bottom: 0;
+    }
+}
+
+.home-title {
+    width: 100%;
+    float: left;
+    padding: 0 0 0 75px;
+    span:first-child {
+        width: 118px;
+        float: left;
+        font-size: 15px;
+        color: #000000;
+        margin-top: 10px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    span:last-child {
+        width: 164px;
+        float: right;
+        color: #626262;
+        font-size: 14px;
+        margin-top: 10px;
+        box-sizing: border-box;
+    }
+}
+
+.home-item-content {
+    width: 100%;
+    font-size: 15px;
+    color: red;
+    padding: 0 4px 0 75px;
+    margin-top: 10px;
+    float: left;
+    box-sizing: border-box;
+}
+
+.alarm-first {
+    margin-top: 55px;
+}
+
+.alarm-records-view {
+    width: 100%;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: @borderRadius;
+}
+
+.alarm-records-title {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: @borderRadius @borderRadius 0 0;
+    text-align: CENTER;
+    height: 34px;
+    line-height: 34px;
+    font-size: 15px;
+    border-bottom: 1px solid @borderColor;
+}
+
+.home-cell {
+    border-radius: 0 0 @borderRadius @borderRadius;
+}
+
+.alarm-table-view {
+    width: 328px;
+    position: relative;
+    margin: 10px auto;
+    padding: 0;
+    list-style: none;
+    padding-bottom: 10px;
+}
+
+.alarm-table-cell {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    border: 1px solid @borderColor;
+    border-radius: 4px;
+    margin: 0 2px;
+}
+
+.circuit-number {
+    width: 100%;
+    float: left;
+    text-align: center;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+}
+
+.warning-icon {
+    background: url('/static/icons/warning.png') 0 0 no-repeat;
+    background-size: cover;
+}
+
+.viewlist-icon {
+    background: url('/static/icons/viewlist.png') 0 0 no-repeat;
+    background-size: cover;
+}
+
+.warning-icon, .viewlist-icon {
+    width: 55px;
+    float: left;
+    height: 55px;
+    margin-left: 23px;
+}
+
+.circuit-title {
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: 12px;
+}
