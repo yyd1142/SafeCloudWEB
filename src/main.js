@@ -10,7 +10,7 @@ Vue.use(VueRouter);
 Vue.use(MintUI);
 
 // 定义组件
-import home from './components/home.vue'
+import home from './views/home.vue'
 
 // 创建一个路由器实例
 // 并且配置路由规则

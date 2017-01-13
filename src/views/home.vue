@@ -1,10 +1,6 @@
 <template>
     <div id="home">
-        <mt-header fixed title="实时监测">
-            <router-link to="/" slot="left">
-                <mt-button icon="back"></mt-button>
-            </router-link>
-        </mt-header>
+        <header-component :my-title="headerTitle" :link="link"></header-component>
         <div class="page-content">
             <div class="alarm-records-view alarm-first">
                 <div class="alarm-records-title">最新报警信息</div>

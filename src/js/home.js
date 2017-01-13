@@ -1,9 +1,12 @@
 import api from 'api'
 import moment from 'moment'
-import { Cell, Header, Button } from 'mint-ui';
+import { Cell } from 'mint-ui';
+import headerComponent from './../components/header.vue';
 export default {
     data() {
         return {
+            headerTitle: '实时监测',
+            link: '#',
             rows: [],
             videoLength: null,
             electricLength: null,
@@ -14,10 +17,10 @@ export default {
     mounted() {
         this.$nextTick(function () {
             this.alarmRecords('all');
-            // this.alarmRecords('video');
-            // this.alarmRecords('electric');
-            // this.devicesList('electric');
-            // this.devicesList('video');
+            this.alarmRecords('video');
+            this.alarmRecords('electric');
+            this.devicesList('electric');
+            this.devicesList('video');
         });
     },
     methods: {
@@ -33,17 +36,20 @@ export default {
                 if (result.code == 0) {
                     if (type == 'all') {
                         self.rows = result.response.datas;
-                        // } else if (type == 'video') {
-                        //     self.videoLength = result.response.datas.length;
-                        // } else if (type == 'electric') {
-                        //     self.electricLength = result.response.datas.length;
-                        // }
+                        console.log(1);
+                    } else if (type == 'video') {
+                        self.videoLength = result.response.datas.length;
+                        console.log(2);
+                    } else if (type == 'electric') {
+                        self.electricLength = result.response.datas.length;
+                        console.log(3);
                     }
                 }
             })
         },
         //设备列表
         devicesList(type) {
+            let self = this;
             let params = {
                 type: type,
                 action: 'list'
@@ -51,12 +57,11 @@ export default {
             api.devicesListData(params).then(result => {
                 if (!result) return false
                 if (result.code == 0) {
-                    // if (type == 'video') {                        
-                    //     self.videoDevicesLength = result.response.datas.length;
-                    // } 
-                    // if (type == 'electric') {
-                    //     self.electricDevicesLength = result.response.datas.length;
-                    // }
+                    if (type == 'video') {                        
+                        self.videoDevicesLength = result.response.datas.length;
+                    } else if (type == 'electric') {
+                        self.electricDevicesLength = result.response.datas.length;
+                    }
                 }
             })
         },
@@ -65,8 +70,7 @@ export default {
         }
     },
     components: {
-        'mt-header': Header,
-        'mt-button': Button,
+        'header-component': headerComponent,
         'mt-cell': Cell
     }
 }
